@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/* =====[ GLOBAL ]===== */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	vertical-align: middle;
+	/* --- */
+	--width-1: 100%;
+	--width-2: 65%;
+	/* --- */
+	--color-1: #fafafa;
+	--color-2: #212121;
+}
+body {
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	/* --- */
+	overflow: hidden;
+	background-color: var(--color-2);
+}
+button, canvas {
+	display: block;
+}
+
+/* =====[ LOCAL ]===== */
+.container {
+	display: grid;
+	width: var(--width-1);
+	height: 100vh;
+	/* --- */
+	grid-template-rows: auto;
+	grid-template-columns: auto;
+	gap: 0px 0px;
+	/*grid-template-areas: "";*/
+	/* --- */
+	palce-self: center center;
+	place-items: center center;
+	/* --- */
+	overflow: hidden;
+	overflow-y: scroll;
+	background-color: var(--color-1);
+}

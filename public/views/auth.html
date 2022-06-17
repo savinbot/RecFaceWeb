@@ -1,0 +1,57 @@
+<!-- Extend base template -->
+{% extends 'base.html' %}
+
+<!-- Block with meta informations -->
+{% block META %}
+	{{ super() }}
+	<!-- ### -->
+{% endblock META %}
+
+<!-- Block with links of styles -->
+{% block STYLES %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('base.assets', filename='styles/auth.css') }}">
+	{{ super() }}
+{% endblock STYLES %}
+
+<!-- Block with links of scripts -->
+{% block SCRIPTS %}
+	<script type="text/JavaScript" src="{{ url_for('base.assets', filename='scripts/auth.js') }}" defer></script>
+	{{ super() }}
+{% endblock SCRIPTS %}
+
+<!-- Block with head contents -->
+{% block HEAD_CONTENT %}
+	<h1>Authorization</h1>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	<ul class=flashes>
+		{% for category, message in messages %}
+		<li class="{{ category }}">{{ message }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+{% endblock HEAD_CONTENT %}
+
+<!-- Block with body contents -->
+{% block BODY_CONTENT %}
+	<ul>
+		<li>
+			<a href="{{ url_for('base.get_index') }}">Home</a>
+		</li>
+		<li>
+			<a href="{{ url_for('base.auth.get_signup') }}">Sign-Up</a>
+		</li>
+		<li>
+			<a href="{{ url_for('base.auth.get_signin', type='photo') }}">Sign-In with photo</a>
+		</li>
+		<li>
+			<a href="{{ url_for('base.auth.get_signin', type='video') }}">Sign-In with video</a>
+		</li>
+	</ul>
+{% endblock BODY_CONTENT %}
+
+<!-- Block with foot contents -->
+{% block FOOT_CONTENT %}
+	<!-- FOOT-CONTENT -->
+{% endblock FOOT_CONTENT %}

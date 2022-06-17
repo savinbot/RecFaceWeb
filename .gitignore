@@ -1,0 +1,8 @@
+# Exclude folders
+/__pycache__/
+/Include/
+/Lib/
+/Scripts/
+
+# Exclude files
+pyvenv.cfg

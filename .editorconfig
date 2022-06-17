@@ -1,0 +1,11 @@
+# EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+indent_style = tab
+indent_size = 4
+spaces_around_operators = true
+trim_trailing_whitespace = true
+insert_final_newline = true

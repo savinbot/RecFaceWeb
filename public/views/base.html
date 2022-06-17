@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+<head>
+	{% block META %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% endblock %}
+	<title>{{ title }} - {{ subtitle }}</title>
+	<link rel="shortcut icon" type="image/svg+xml" href="{{ url_for('base.assets', filename='images/logotype.svg') }}">
+	<link rel="shortcut icon" type="image/png" href="{{ url_for('base.assets', filename='images/logotype.png') }}">
+	{% block STYLES %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('base.assets', filename='styles/main.css') }}">
+	{% endblock %}
+	{% block SCRIPTS %}
+	<script type="text/JavaScript" src="{{ url_for('base.assets', filename='scripts/main.js') }}" defer></script>
+	{% endblock %}
+</head>
+<body>
+	<div class="container">
+		<header class="container-head head">
+			{% block HEAD_CONTENT %}{% endblock %}
+		</header>
+		<div class="container-body body">
+			{% block BODY_CONTENT %}{% endblock %}
+		</div>
+		<footer class="container-foot foot">
+			{% block FOOT_CONTENT %}{% endblock %}
+		</footer>
+	</div>
+</body>
+</html>
